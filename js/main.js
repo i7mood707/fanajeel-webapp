@@ -21,7 +21,10 @@
           headers: { Accept: 'application/json' },
           body: new FormData(form),
         });
-        if (!res.ok) throw new Error('bad response');
+        const data = await res.json().catch(() => null);
+        if (!res.ok || !data || data.success === 'false' || data.success === false) {
+          throw new Error((data && data.message) || 'bad response');
+        }
         if (msg) msg.textContent = 'وصلت رسالتك! بنرد عليك قريب.';
         form.reset();
       } catch (err) {
