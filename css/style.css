@@ -110,6 +110,8 @@ h1,h2,h3,h4{
 
 /* ---------- Buttons ---------- */
 .btn{
+  -webkit-appearance: none;
+  appearance: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -202,6 +204,8 @@ h1,h2,h3,h4{
 .nav-right{ display:flex; align-items:center; gap: 14px; }
 
 .nav-toggle{
+  -webkit-appearance: none;
+  appearance: none;
   display: none;
   width: 46px; height: 46px;
   border: var(--border);
@@ -456,8 +460,12 @@ section{ padding: 90px 0; position: relative; }
   margin: 36px 0 10px;
 }
 .filter-btn{
+  -webkit-appearance: none;
+  appearance: none;
   border: var(--border);
   background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-body);
   border-radius: 999px;
   padding: 9px 22px;
   font-weight: 800;
@@ -558,7 +566,7 @@ section{ padding: 90px 0; position: relative; }
 .about-hero h1{ font-size: clamp(2.6rem,5vw,4rem); margin-bottom: 20px; }
 .about-hero p{ color: var(--ink-soft); font-size: 1.08rem; line-height: 1.85; margin-bottom: 14px; }
 .about-portrait{
-  background: var(--pink);
+  background: var(--yellow);
   border: var(--border-thick);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);

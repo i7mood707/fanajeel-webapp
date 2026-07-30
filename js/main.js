@@ -7,13 +7,28 @@
     navToggle.addEventListener('click', () => navbar.classList.toggle('is-open'));
   }
 
-  const form = document.querySelector('.contact-card form');
+  const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const msg = form.querySelector('.form-msg');
-      if (msg) msg.textContent = 'وصلت رسالتك! بنرد عليك قريب.';
-      form.reset();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      if (msg) { msg.style.color = ''; msg.textContent = 'يتم الإرسال...'; }
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+        if (!res.ok) throw new Error('bad response');
+        if (msg) msg.textContent = 'وصلت رسالتك! بنرد عليك قريب.';
+        form.reset();
+      } catch (err) {
+        if (msg) { msg.style.color = '#c0392b'; msg.textContent = 'صار خطأ، جرب مرة ثانية أو راسلنا مباشرة على الإيميل.'; }
+      } finally {
+        submitBtn.disabled = false;
+      }
     });
   }
 
