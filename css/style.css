@@ -58,6 +58,7 @@
   --blue: #7fc4e0;
   --pink: #f0a3c1;
   --green: #6fbf9b;
+  --brown: #a9673f;
   --shadow: 6px 6px 0 var(--ink);
   --shadow-sm: 4px 4px 0 var(--ink);
   --shadow-lg: 10px 10px 0 var(--ink);
@@ -396,6 +397,7 @@ section{ padding: 90px 0; position: relative; }
 .bg-blue{ background: var(--blue); }
 .bg-pink{ background: var(--pink); }
 .bg-green{ background: var(--green); }
+.bg-brown{ background: var(--brown); }
 .bg-zawwad{ background: #6d8a55; }
 
 /* ================= Values / manifesto list ================= */
