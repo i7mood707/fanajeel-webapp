@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fanajeel.com/sitemap.xml
+Sitemap: https://fnajeel.com/sitemap.xml
